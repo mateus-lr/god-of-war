@@ -3,8 +3,9 @@
   padding-top: 16.4rem;
   padding-bottom: 10.3rem;
   background-image: url("../img/bg-hero.jpg");
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 
   .container {
     display: flex;
@@ -115,11 +116,11 @@
     }
 
     .right {
-      top: 0;
-      max-width: 35.3rem;
+      max-width: 35.3rem !important;
+      top: 0 !important;
 
       button {
-        height: 19.7rem;
+        height: 19.7rem !important;
       }
     }
   }
@@ -135,6 +136,7 @@
 
     .left {
       text-align: center;
+      margin-bottom: 4rem;
 
       .value {
         justify-content: center;
@@ -149,10 +151,11 @@
       }
 
       .year-old {
-        justify-content: center;
+        flex-direction: column;
 
         p {
-          line-height: 1.7 !important;
+          margin-top: 2rem;
+          line-height: 1.7;
         }
       }
     }
@@ -160,18 +163,39 @@
 
   @media (max-width: 560px) {
     padding: 4rem 0;
-    .left {
-      h1 {
-        font-size: 6rem;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
+
+    .container {
+      .left {
+        h1 {
+          font-size: 6rem;
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        p {
+          font-size: 1.4rem;
+          max-width: 80%;
+          margin: 0 auto;
+          margin-bottom: 3rem;
+        }
+
+        .value {
+          flex-direction: column;
+        }
       }
 
-      p {
-        font-size: 1.4rem;
-        max-width: 80%;	
-        margin: 0 auto;
-        margin-bottom: 3rem;
+      .right {
+        max-width: 31rem;
+
+        button {
+          height: 17.7rem !important;
+        }
+
+        .year-old {
+          p {
+            line-height: 2.4rem;
+          }
+        }
       }
     }
   }
@@ -204,16 +228,43 @@
       }
     }
   }
+
+  @media(max-width: 1200px) {
+    height: auto;
+    padding: 4rem 0;
+
+    ul {
+      flex-wrap: wrap;
+      gap: 3rem 0;
+
+      li {
+        width: 33.3%;
+      }
+    }
+  }
+
+  @media(max-width: 560px) {
+    ul {
+      li {
+        width: 50%;
+
+        span {
+          max-width: 14.5rem;
+        }
+      }
+    }
+  }
 }
 
 .s-story {
-  display: none;
   width: 100%;
-  padding: 16rem 8rem;
+  padding: 16rem 8rem 6rem 8rem;
   background-image: url("../img/bg-story.png");
   background-position: top center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   overflow: hidden;
+  border-bottom: 1.4rem solid #000;
 
   .container {
     display: flex;
@@ -253,15 +304,56 @@
       top: -4.5rem;
     }
   }
+
+  @media(max-width: 1200px) {
+    background-image: none;
+    padding: 6rem 0;
+
+    .container {
+      flex-direction: column-reverse;
+    }
+
+    .kratos-atreus {
+      left: 0 !important;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media(max-width: 560px) {
+    .container {
+      .left {
+        h2 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 1.6rem;
+        }
+      }
+
+      .corp {
+        flex-direction: column;
+
+        img {
+          margin-bottom: 2rem;
+        }
+
+        p {
+          text-align: center;
+          margin-left: 0 !important;
+        }
+      }
+    }
+  }
 }
 
 .s-characteres {
-  display: none;
   padding-top: 17.6rem;
-  padding-bottom: 14.3rem;
+  padding-bottom: 4rem;
   background-image: url("../img/bg-characters.png");
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   overflow: hidden;
 
   .description {
@@ -292,6 +384,60 @@
           color: #ffffff;
           max-width: 14.3rem;
           margin-top: 2.2rem;
+        }
+      }
+    }
+  }
+
+  @media(max-width: 1200px) {
+    padding: 4rem 0;
+  }
+
+  @media(max-width: 991px) {
+    .description {
+      flex-direction: column;
+      align-items: center;
+
+      .left {
+        margin-bottom: 2rem;
+      }
+
+      .right {
+        max-width: 61.2rem;
+      }
+    }
+  }
+
+  @media(max-width: 560px) {
+    padding: 4rem 0;
+
+    .description {
+      .left {
+        h2 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 1.6rem;
+        }
+      }
+
+      .right {
+        flex-direction: column;
+        align-items: center;
+
+        .text {
+          img {
+            width: 70%;
+            margin: 0 auto;
+          }
+
+          span {
+            font-size: 1.6rem;
+            max-width: 100%;
+            text-align: center;
+            margin-bottom: 2rem
+          }
         }
       }
     }
